@@ -1,0 +1,53 @@
+$crust: rgb(17, 17, 27)	
+$text: #4ade80
+$sapphire: #06b6d4	
+$subtext: rgb(166, 173, 200)	
+
+body
+  background-color: $crust
+  color: $text
+  font-family: 'JetBrain Mono', monospace
+  display: flex 
+  flex-direction: column
+
+.section
+  margin-left: auto
+  margin-right: auto
+
+  @media (max-width: 1250px)
+    max-width: 90%
+
+  max-width: 40%
+
+.container
+  padding: 16px
+  border-width: 1px
+  border-radius: 4px
+  border-color: $text
+  border-style: solid
+
+.header
+  display: flex
+  justify-content: center  
+  margin-bottom: 32px
+
+.header-item
+  padding: 16px
+  margin-left: 8px
+  margin-right: 8px
+  border-width: 1px
+  border-radius: 4px
+  border-color: $sapphire
+  border-style: solid
+
+a 
+  color: $sapphire 
+  text-decoration: none
+
+.preview
+  color: $subtext 
+
+#logo
+  position: absolute
+  top: 16
+  left: 16

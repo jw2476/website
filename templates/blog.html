@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ section.title }}
+</h1>
+  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
+  {% for page in section.pages %}
+    <div class="container">
+      <h3 style="text-align: center;"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
+      <br>
+      <svg class="icon i-clock" viewBox="0 0 32 32"
+           width="16" height="16" fill="none" stroke="currentcolor"
+           stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+          <circle cx="16" cy="16" r="14"/>
+          <path d="M16 8 L16 16 20 20"/>
+      </svg>
+      {{ page.reading_time }} minute read
+      <svg class="icon i-edit" viewBox="0 0 32 32"
+           width="16" height="16" fill="none" stroke="currentcolor"
+           stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+          <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+      </svg>
+      {{ page.date }} 
+      <p class="preview">{{ page.summary | safe }}</p>
+    </div>
+  {% endfor %}
+{% endblock content %}
