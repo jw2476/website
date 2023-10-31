@@ -6,8 +6,9 @@
 </h1>
   <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
   {% for page in section.pages %}
-    <div class="container">
-      <h3 style="text-align: center;"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
+  <a href="{{ page.permalink | safe }}">
+    <button>
+      <h3 style="text-align: center;">{{ page.title }}</h3>
       <br>
       <svg class="icon i-clock" viewBox="0 0 32 32"
            width="16" height="16" fill="none" stroke="currentcolor"
@@ -23,6 +24,7 @@
       </svg>
       {{ page.date }} 
       <p class="preview">{{ page.summary | safe }}</p>
-    </div>
+    </button>
+  </a>
   {% endfor %}
 {% endblock content %}
